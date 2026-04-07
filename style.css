@@ -91,16 +91,65 @@ body {
 }
 .texto-inicial {
     max-width: 1000px;
-    margin: 300px auto 0 auto; 
+    margin: 0px auto 0 auto; 
     border-radius: 300px;
 }
 
 .lista {
-  max-width: 400px;     /* define largura */
-  margin: 0 auto;       /* centraliza a lista */
+  max-width: 400px;    
   list-style: none;
   text-align: center;
   color: white;
 }
+.video-container video {
+  width: 1620px;
+  object-fit: cover;
 
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
 
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.circulo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+
+  animation: girar 10s steps(60) infinite;
+}
+
+.circulo span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* posiciona em círculo */
+  transform: rotate(calc(var(--i) * 72deg)) translate(80px) rotate(calc(var(--i) * -72deg));
+  transform-origin: center;
+
+  color: white;
+  font-size: 25px;
+}
+
+/* rotação do conjunto */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
